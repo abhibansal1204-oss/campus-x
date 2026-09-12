@@ -1,0 +1,2395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAMPUS-X | Poornima University</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7ff;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#172554,#2563eb,#7c3aed);
+    color:white;
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 5px 20px #0003;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#facc15;
+}
+
+nav button{
+    background:transparent;
+    border:none;
+    color:white;
+    margin:5px;
+    padding:10px 14px;
+    cursor:pointer;
+    font-size:15px;
+    border-radius:8px;
+}
+
+nav button:hover{
+    background:#ffffff25;
+}
+
+section{
+    display:none;
+    padding:60px 7%;
+    min-height:85vh;
+}
+
+#home{
+    display:block;
+}
+
+.hero{
+    min-height:75vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#dbeafe,#ede9fe,#fce7f3);
+}
+
+.hero h1{
+    font-size:60px;
+    color:#1d4ed8;
+    animation:float 2s infinite alternate;
+}
+
+.hero h2{
+    margin:10px 0;
+    color:#4c1d95;
+}
+
+.hero p{
+    max-width:700px;
+    font-size:18px;
+    margin:15px;
+    line-height:1.6;
+}
+
+@keyframes float{
+    from{transform:translateY(0);}
+    to{transform:translateY(-10px);}
+}
+
+.main-btn{
+    padding:14px 25px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin:8px;
+    box-shadow:0 5px 15px #0003;
+}
+
+.main-btn:hover{
+    transform:scale(1.05);
+}
+
+.title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.title h2{
+    font-size:35px;
+    color:#1e3a8a;
+}
+
+.title p{
+    margin-top:8px;
+    color:#555;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    padding:30px 22px;
+    border-radius:20px;
+    color:white;
+    min-height:220px;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 8px 20px #0002;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 15px 30px #0003;
+}
+
+.card h3{
+    font-size:22px;
+    margin:15px 0;
+}
+
+.card p{
+    line-height:1.5;
+}
+
+.blue{
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+}
+
+.pink{
+    background:linear-gradient(135deg,#db2777,#f472b6);
+}
+
+.green{
+    background:linear-gradient(135deg,#059669,#34d399);
+}
+
+.purple{
+    background:linear-gradient(135deg,#7c3aed,#a78bfa);
+}
+
+.orange{
+    background:linear-gradient(135deg,#ea580c,#fbbf24);
+}
+
+.icon{
+    font-size:45px;
+}
+
+.box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px #0002;
+}
+
+.login-box{
+    max-width:450px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 8px 25px #0002;
+}
+
+.login-box h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#2563eb;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px;
+    margin:8px 0 15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:15px;
+}
+
+textarea{
+    height:100px;
+    resize:none;
+}
+
+label{
+    font-weight:bold;
+}
+
+.message{
+    margin-top:15px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.info{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 18px #0002;
+}
+
+.info h3{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.stat{
+    padding:25px;
+    border-radius:18px;
+    color:white;
+    text-align:center;
+    box-shadow:0 5px 15px #0002;
+}
+
+.stat h2{
+    font-size:35px;
+    margin-bottom:5px;
+}
+
+.stat-blue{
+    background:#2563eb;
+}
+
+.stat-orange{
+    background:#ea580c;
+}
+
+.stat-green{
+    background:#059669;
+}
+
+.report{
+    background:white;
+    padding:20px;
+    margin:15px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px #0002;
+}
+
+.high{
+    border-left:7px solid #ef4444;
+}
+
+.medium{
+    border-left:7px solid #f59e0b;
+}
+
+.low{
+    border-left:7px solid #22c55e;
+}
+
+.priority-badge{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:20px;
+    color:white;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.priority-high{
+    background:#dc2626;
+}
+
+.priority-medium{
+    background:#ea580c;
+}
+
+.priority-low{
+    background:#16a34a;
+}
+
+.map{
+    max-width:850px;
+    margin:auto;
+    background:#dbeafe;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 8px 25px #0002;
+}
+
+.map-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+.location{
+    padding:20px 10px;
+    border:none;
+    border-radius:15px;
+    background:white;
+    cursor:pointer;
+    font-size:15px;
+    box-shadow:0 4px 10px #0002;
+}
+
+.location:hover{
+    background:#2563eb;
+    color:white;
+    transform:scale(1.04);
+}
+
+.result{
+    margin-top:20px;
+    padding:20px;
+    border-radius:15px;
+    background:#eff6ff;
+    font-size:18px;
+    text-align:center;
+}
+
+footer{
+    background:#172554;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+    }
+
+    nav{
+        margin-top:10px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+CAMPUS-<span>X</span>
+</div>
+
+<nav>
+<button onclick="showSection('home')">Home</button>
+<button onclick="showSection('studentLogin')">Student</button>
+<button onclick="showSection('adminLogin')">Admin</button>
+<button onclick="showSection('navigation')">Navigation</button>
+</nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<section id="home">
+
+<div class="hero">
+
+<h1>CAMPUS-X</h1>
+
+<h2>
+Smart Campus Resource & Problem Optimization System
+</h2>
+
+<p>
+Poornima University, Jaipur
+<br>
+Report campus problems, find locations, get smart priority
+and optimize campus resources.
+</p>
+
+<div>
+
+<button class="main-btn"
+onclick="showSection('studentLogin')">
+Student Login
+</button>
+
+<button class="main-btn"
+onclick="showSection('adminLogin')">
+Admin Login
+</button>
+
+<button class="main-btn"
+onclick="showSection('navigation')">
+Campus Navigation
+</button>
+
+</div>
+
+</div>
+
+
+<div class="title">
+
+<h2>Our Smart Features</h2>
+
+<p>
+Click anywhere on a box to open that feature
+</p>
+
+</div>
+
+
+<div class="features">
+
+<div class="card blue"
+onclick="showSection('report')">
+
+<div class="icon">📝</div>
+
+<h3>Report Problem</h3>
+
+<p>
+Students can report problems related to
+classrooms, labs, projectors, computers,
+electricity and other campus facilities.
+</p>
+
+</div>
+
+
+<div class="card pink"
+onclick="showSection('priority')">
+
+<div class="icon">⚡</div>
+
+<h3>Smart Priority</h3>
+
+<p>
+Our priority engine calculates which
+campus problem should be solved first.
+</p>
+
+</div>
+
+
+<div class="card green"
+onclick="showSection('resources')">
+
+<div class="icon">♻️</div>
+
+<h3>Resource Optimization</h3>
+
+<p>
+Manage and distribute available campus
+resources in a smarter way.
+</p>
+
+</div>
+
+
+<div class="card purple"
+onclick="showSection('whatIf')">
+
+<div class="icon">🔮</div>
+
+<h3>What-If Simulator</h3>
+
+<p>
+Test different resource situations and
+see how the campus can respond.
+</p>
+
+</div>
+
+
+<div class="card orange"
+onclick="showSection('navigation')">
+
+<div class="icon">📍</div>
+
+<h3>Campus Navigation</h3>
+
+<p>
+Find important campus locations such as
+classes, labs, library, hostel and washrooms.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STUDENT LOGIN -->
+
+<section id="studentLogin">
+
+<div class="title">
+
+<h2>🎓 Student Portal</h2>
+
+<p>
+Login using your Poornima University email
+</p>
+
+</div>
+
+
+<div class="login-box">
+
+<h2>Student Login</h2>
+
+<label>College Email ID</label>
+
+<input
+type="email"
+id="loginEmail"
+placeholder="example@poornima.edu.in"
+>
+
+<label>Password</label>
+
+<input
+type="password"
+id="loginPassword"
+placeholder="Enter your password"
+>
+
+<button class="main-btn"
+onclick="studentLogin()">
+Login
+</button>
+
+<button class="main-btn"
+onclick="showSection('register')">
+Create Account
+</button>
+
+<button class="main-btn"
+onclick="showSection('home')">
+Back
+</button>
+
+<div id="loginMessage" class="message"></div>
+
+</div>
+
+</section>
+
+
+<!-- REGISTER -->
+
+<section id="register">
+
+<div class="title">
+
+<h2>📝 Create Student Account</h2>
+
+<p>
+Use your Poornima University college email
+</p>
+
+</div>
+
+
+<div class="login-box">
+
+<h2>Student Registration</h2>
+
+<label>Student Name</label>
+
+<input
+type="text"
+id="registerName"
+placeholder="Enter your name"
+>
+
+<label>College Email ID</label>
+
+<input
+type="email"
+id="registerEmail"
+placeholder="example@poornima.edu.in"
+>
+
+<label>Enrollment Number</label>
+
+<input
+type="text"
+id="registerEnrollment"
+placeholder="Enter enrollment number"
+>
+
+<label>Branch</label>
+
+<select id="registerBranch">
+
+<option>B.Tech CSE</option>
+<option>B.Tech AI & Data Science</option>
+<option>B.Tech Cyber Security</option>
+
+</select>
+
+<label>Semester</label>
+
+<select id="registerSemester">
+
+<option>1st Semester</option>
+<option>2nd Semester</option>
+<option>3rd Semester</option>
+<option>4th Semester</option>
+<option>5th Semester</option>
+<option>6th Semester</option>
+<option>7th Semester</option>
+<option>8th Semester</option>
+
+</select>
+
+<label>Create Password</label>
+
+<input
+type="password"
+id="registerPassword"
+placeholder="Create your password"
+>
+
+<label>Confirm Password</label>
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm your password"
+>
+
+<button class="main-btn"
+onclick="registerStudent()">
+Create Account
+</button>
+
+<button class="main-btn"
+onclick="showSection('studentLogin')">
+Back to Login
+</button>
+
+<div id="registerMessage" class="message"></div>
+
+</div>
+
+</section>
+
+
+<!-- STUDENT DASHBOARD -->
+
+<section id="studentDashboard">
+
+<div class="title">
+
+<h2>🎓 Student Dashboard</h2>
+
+<p id="welcomeStudent">
+Welcome to CAMPUS-X
+</p>
+
+</div>
+
+
+<div class="info box" style="margin-bottom:30px;">
+
+<h3>👤 Student Profile</h3>
+
+<br>
+
+<p><b>Name:</b> <span id="profileName"></span></p>
+<p><b>Email:</b> <span id="profileEmail"></span></p>
+<p><b>Enrollment:</b> <span id="profileEnrollment"></span></p>
+<p><b>Branch:</b> <span id="profileBranch"></span></p>
+<p><b>Semester:</b> <span id="profileSemester"></span></p>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat stat-blue">
+<h2 id="totalReports">0</h2>
+<p>Total Reports</p>
+</div>
+
+<div class="stat stat-orange">
+<h2 id="pendingReports">0</h2>
+<p>Pending</p>
+</div>
+
+<div class="stat stat-green">
+<h2 id="resolvedReports">0</h2>
+<p>Resolved</p>
+</div>
+
+</div>
+
+
+<div class="info-grid">
+
+<div class="info"
+onclick="showSection('report')"
+style="cursor:pointer;">
+
+<h3>📝 Report Problem</h3>
+<p>Report a campus problem.</p>
+
+</div>
+
+
+<div class="info"
+onclick="showSection('myReports')"
+style="cursor:pointer;">
+
+<h3>📊 My Reports</h3>
+<p>Check your submitted problems.</p>
+
+</div>
+
+
+<div class="info"
+onclick="showSection('navigation')"
+style="cursor:pointer;">
+
+<h3>📍 Campus Navigation</h3>
+<p>Find campus locations.</p>
+
+</div>
+
+</div>
+
+<br>
+
+<button class="main-btn"
+onclick="logout()">
+Logout
+</button>
+
+</section>
+
+
+<!-- REPORT PROBLEM -->
+
+<section id="report">
+
+<div class="title">
+
+<h2>📝 Report a Campus Problem</h2>
+
+<p>
+CAMPUS-X will automatically calculate the priority.
+</p>
+
+</div>
+
+
+<div class="box">
+
+<label>Problem Title</label>
+
+<input
+type="text"
+id="problemTitle"
+placeholder="Example: Projector not working"
+>
+
+
+<label>Location</label>
+
+<select id="problemLocation">
+
+<option>Main Gate</option>
+<option>Admin Block</option>
+<option>Library</option>
+<option>Class</option>
+<option>Computer Lab</option>
+<option>Seminar Hall</option>
+<option>Boys Washroom</option>
+<option>Girls Washroom</option>
+<option>Hostel</option>
+
+</select>
+
+
+<label>Category</label>
+
+<select id="problemCategory">
+
+<option>Electrical</option>
+<option>Computer</option>
+<option>Classroom</option>
+<option>Laboratory</option>
+<option>Cleanliness</option>
+<option>Other</option>
+
+</select>
+
+
+<label>Students Affected</label>
+
+<input
+type="number"
+id="affectedStudents"
+placeholder="Example: 50"
+min="0"
+>
+
+
+<label>Urgency</label>
+
+<select id="urgency">
+
+<option value="High">High</option>
+<option value="Medium">Medium</option>
+<option value="Low">Low</option>
+
+</select>
+
+
+<label>Deadline Importance</label>
+
+<select id="problemDeadline">
+
+<option value="3">Very Important</option>
+<option value="2">Important</option>
+<option value="1">Normal</option>
+
+</select>
+
+
+<label>Resource Importance</label>
+
+<select id="problemResource">
+
+<option value="3">Very High</option>
+<option value="2">Medium</option>
+<option value="1">Low</option>
+
+</select>
+
+
+<label>Problem Description</label>
+
+<textarea
+id="problemDescription"
+placeholder="Describe the problem..."
+></textarea>
+
+
+<button class="main-btn"
+onclick="submitProblem()">
+Submit Problem
+</button>
+
+
+<button class="main-btn"
+onclick="showSection('studentDashboard')">
+Back
+</button>
+
+</div>
+
+</section>
+
+
+<!-- MY REPORTS -->
+
+<section id="myReports">
+
+<div class="title">
+
+<h2>📊 My Reports</h2>
+
+<p>Your submitted campus problems</p>
+
+</div>
+
+
+<div id="myReportsList"></div>
+
+
+<button class="main-btn"
+onclick="showSection('studentDashboard')">
+Back
+</button>
+
+</section>
+
+
+<!-- SMART PRIORITY -->
+
+<section id="priority">
+
+<div class="title">
+
+<h2>⚡ Smart Priority Engine</h2>
+
+<p>
+Calculate the priority of a campus problem
+</p>
+
+</div>
+
+
+<div class="box">
+
+<label>Urgency</label>
+
+<select id="priorityUrgency">
+
+<option value="3">High</option>
+<option value="2">Medium</option>
+<option value="1">Low</option>
+
+</select>
+
+
+<label>Students Affected</label>
+
+<input
+type="number"
+id="priorityStudents"
+value="50"
+min="0"
+>
+
+
+<label>Deadline Importance</label>
+
+<select id="deadline">
+
+<option value="3">Very Important</option>
+<option value="2">Important</option>
+<option value="1">Normal</option>
+
+</select>
+
+
+<label>Resource Importance</label>
+
+<select id="resourceImportance">
+
+<option value="3">Very High</option>
+<option value="2">Medium</option>
+<option value="1">Low</option>
+
+</select>
+
+
+<button class="main-btn"
+onclick="calculatePriorityDemo()">
+Calculate Priority
+</button>
+
+
+<div class="result" id="priorityResult">
+Priority score will appear here.
+</div>
+
+</div>
+
+
+<br>
+
+<button class="main-btn"
+onclick="showSection('home')">
+Back Home
+</button>
+
+</section>
+
+
+<!-- RESOURCE OPTIMIZATION -->
+
+<section id="resources">
+
+<div class="title">
+
+<h2>♻️ Resource Optimization</h2>
+
+<p>
+Smart management of campus resources
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+<div class="info">
+
+<h3>💻 Computers</h3>
+<p>Available: <b>35</b></p>
+<p>In Use: <b>15</b></p>
+
+</div>
+
+
+<div class="info">
+
+<h3>📽️ Projectors</h3>
+<p>Available: <b>8</b></p>
+<p>In Use: <b>4</b></p>
+
+</div>
+
+
+<div class="info">
+
+<h3>🏫 Classrooms</h3>
+<p>Available: <b>12</b></p>
+<p>Occupied: <b>8</b></p>
+
+</div>
+
+
+<div class="info">
+
+<h3>🚌 Buses</h3>
+<p>Available: <b>5</b></p>
+<p>In Service: <b>3</b></p>
+
+</div>
+
+</div>
+
+
+<div class="box" style="margin-top:30px;">
+
+<h3>Smart Suggestion</h3>
+
+<br>
+
+<p>
+CAMPUS-X checks available resources and suggests
+redistribution when a campus facility has a shortage.
+</p>
+
+
+<div class="result">
+
+💡 Suggested Action:
+
+<br><br>
+
+Move an available projector from a low-priority
+classroom to the high-priority event location.
+
+</div>
+
+</div>
+
+
+<br>
+
+<button class="main-btn"
+onclick="showSection('home')">
+Back Home
+</button>
+
+</section>
+
+
+<!-- WHAT IF -->
+
+<section id="whatIf">
+
+<div class="title">
+
+<h2>🔮 What-If Simulator</h2>
+
+<p>
+Try different resource situations
+</p>
+
+</div>
+
+
+<div class="box">
+
+<label>Total Available Computers</label>
+
+<input
+type="number"
+id="totalComputers"
+value="50"
+>
+
+
+<label>Computers Required</label>
+
+<input
+type="number"
+id="requiredComputers"
+value="35"
+>
+
+
+<label>Emergency Requirement</label>
+
+<input
+type="number"
+id="emergencyComputers"
+value="5"
+>
+
+
+<button class="main-btn"
+onclick="runSimulator()">
+Run Simulation
+</button>
+
+
+<div class="result"
+id="simulationResult">
+Simulation result will appear here.
+</div>
+
+</div>
+
+
+<br>
+
+<button class="main-btn"
+onclick="showSection('home')">
+Back Home
+</button>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<section id="navigation">
+
+<div class="title">
+
+<h2>📍 Campus Navigation</h2>
+
+<p>
+Select a location to get a simple direction
+</p>
+
+</div>
+
+
+<div class="map">
+
+<select
+id="mapLocation"
+onchange="findLocation()">
+
+<option value="">
+-- Select Location --
+</option>
+
+<option>Main Gate</option>
+<option>Admin Block</option>
+<option>Library</option>
+<option>Class</option>
+<option>Computer Lab</option>
+<option>Seminar Hall</option>
+<option>Boys Washroom</option>
+<option>Girls Washroom</option>
+<option>Hostel</option>
+
+</select>
+
+
+<div class="map-grid">
+
+<button class="location"
+onclick="selectMapLocation('Main Gate')">
+🚪 Main Gate
+</button>
+
+<button class="location"
+onclick="selectMapLocation('Admin Block')">
+🏢 Admin Block
+</button>
+
+<button class="location"
+onclick="selectMapLocation('Library')">
+📚 Library
+</button>
+
+<button class="location"
+onclick="selectMapLocation('Class')">
+🏫 Class
+</button>
+
+<button class="location"
+onclick="selectMapLocation('Computer Lab')">
+💻 Computer Lab
+</button>
+
+<button class="location"
+onclick="selectMapLocation('Seminar Hall')">
+🎤 Seminar Hall
+</button>
+
+<button class="location"
+onclick="selectMapLocation('Boys Washroom')">
+🚹 Boys Washroom
+</button>
+
+<button class="location"
+onclick="selectMapLocation('Girls Washroom')">
+🚺 Girls Washroom
+</button>
+
+<button class="location"
+onclick="selectMapLocation('Hostel')">
+🏠 Hostel
+</button>
+
+</div>
+
+
+<div
+class="result"
+id="directionResult">
+Select a location.
+</div>
+
+</div>
+
+
+<br>
+
+<button class="main-btn"
+onclick="showSection('home')">
+Back Home
+</button>
+
+</section>
+
+
+<!-- ADMIN LOGIN -->
+
+<section id="adminLogin">
+
+<div class="title">
+
+<h2>🔐 Admin Login</h2>
+
+</div>
+
+
+<div class="login-box">
+
+<h2>Admin Portal</h2>
+
+<label>Username</label>
+
+<input
+type="text"
+id="adminUser"
+placeholder="Enter username"
+>
+
+
+<label>Password</label>
+
+<input
+type="password"
+id="adminPass"
+placeholder="Enter password"
+>
+
+
+<button class="main-btn"
+onclick="adminLogin()">
+Login
+</button>
+
+
+<button class="main-btn"
+onclick="showSection('home')">
+Back
+</button>
+
+
+<div
+id="adminMessage"
+class="message">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ADMIN DASHBOARD -->
+
+<section id="adminDashboard">
+
+<div class="title">
+
+<h2>🔐 Admin Dashboard</h2>
+
+<p>
+Manage and prioritize campus problems
+</p>
+
+</div>
+
+
+<div id="adminReports"></div>
+
+
+<button class="main-btn"
+onclick="logout()">
+Logout
+</button>
+
+</section>
+
+
+<footer>
+
+<p>
+© 2026 CAMPUS-X | Poornima University, Jaipur
+</p>
+
+</footer>
+
+
+<script>
+
+/* SECTION CONTROL */
+
+function showSection(sectionId){
+
+let sections =
+document.querySelectorAll("section");
+
+sections.forEach(function(section){
+section.style.display="none";
+});
+
+document.getElementById(sectionId).style.display="block";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+if(sectionId==="myReports"){
+displayMyReports();
+}
+
+if(sectionId==="studentDashboard"){
+loadStudentDashboard();
+}
+
+if(sectionId==="adminDashboard"){
+displayAdminReports();
+}
+
+}
+
+
+/* REGISTRATION */
+
+function registerStudent(){
+
+let name =
+document.getElementById("registerName").value.trim();
+
+let email =
+document.getElementById("registerEmail").value.trim();
+
+let enrollment =
+document.getElementById("registerEnrollment").value.trim();
+
+let branch =
+document.getElementById("registerBranch").value;
+
+let semester =
+document.getElementById("registerSemester").value;
+
+let password =
+document.getElementById("registerPassword").value;
+
+let confirmPassword =
+document.getElementById("confirmPassword").value;
+
+let message =
+document.getElementById("registerMessage");
+
+
+if(!email.toLowerCase().endsWith("@poornima.edu.in")){
+
+message.innerHTML=
+"❌ Please use your @poornima.edu.in college email.";
+
+message.style.color="#dc2626";
+
+return;
+}
+
+
+if(name==="" ||
+enrollment==="" ||
+password==="" ||
+confirmPassword===""){
+
+message.innerHTML=
+"❌ Please fill all required fields.";
+
+message.style.color="#dc2626";
+
+return;
+}
+
+
+if(password.length<6){
+
+message.innerHTML=
+"❌ Password must contain at least 6 characters.";
+
+message.style.color="#dc2626";
+
+return;
+}
+
+
+if(password!==confirmPassword){
+
+message.innerHTML=
+"❌ Password and Confirm Password do not match.";
+
+message.style.color="#dc2626";
+
+return;
+}
+
+
+let students =
+JSON.parse(localStorage.getItem("campusStudents")) || [];
+
+
+let existingStudent =
+students.find(function(student){
+
+return student.email.toLowerCase()===
+email.toLowerCase();
+
+});
+
+
+if(existingStudent){
+
+message.innerHTML=
+"⚠️ This email is already registered.";
+
+message.style.color="#dc2626";
+
+return;
+}
+
+
+let student={
+
+name:name,
+email:email,
+enrollment:enrollment,
+branch:branch,
+semester:semester,
+password:password
+
+};
+
+
+students.push(student);
+
+
+localStorage.setItem(
+"campusStudents",
+JSON.stringify(students)
+);
+
+
+message.innerHTML=
+"✅ Account created successfully!";
+
+message.style.color="#16a34a";
+
+
+setTimeout(function(){
+
+document.getElementById("loginEmail").value=email;
+
+showSection("studentLogin");
+
+},1000);
+
+}
+
+
+/* STUDENT LOGIN */
+
+function studentLogin(){
+
+let email =
+document.getElementById("loginEmail").value.trim();
+
+let password =
+document.getElementById("loginPassword").value;
+
+let message =
+document.getElementById("loginMessage");
+
+
+if(!email.toLowerCase().endsWith("@poornima.edu.in")){
+
+message.innerHTML=
+"❌ Only @poornima.edu.in email is allowed.";
+
+message.style.color="#dc2626";
+
+return;
+}
+
+
+let students =
+JSON.parse(localStorage.getItem("campusStudents")) || [];
+
+
+let student =
+students.find(function(item){
+
+return item.email.toLowerCase()===
+email.toLowerCase() &&
+item.password===password;
+
+});
+
+
+if(student){
+
+localStorage.setItem(
+"loggedInStudent",
+JSON.stringify(student)
+);
+
+message.innerHTML=
+"✅ Login Successful!";
+
+message.style.color="#16a34a";
+
+
+setTimeout(function(){
+
+showSection("studentDashboard");
+
+},500);
+
+}else{
+
+message.innerHTML=
+"❌ Email or password is incorrect.";
+
+message.style.color="#dc2626";
+
+}
+
+}
+
+
+/* STUDENT DASHBOARD */
+
+function loadStudentDashboard(){
+
+let student =
+JSON.parse(localStorage.getItem("loggedInStudent"));
+
+
+if(!student){
+
+showSection("studentLogin");
+
+return;
+}
+
+
+document.getElementById("welcomeStudent").innerHTML=
+"Welcome, <b>"+student.name+"</b> 👋";
+
+document.getElementById("profileName").innerHTML=
+student.name;
+
+document.getElementById("profileEmail").innerHTML=
+student.email;
+
+document.getElementById("profileEnrollment").innerHTML=
+student.enrollment;
+
+document.getElementById("profileBranch").innerHTML=
+student.branch;
+
+document.getElementById("profileSemester").innerHTML=
+student.semester;
+
+
+let reports =
+JSON.parse(localStorage.getItem("campusReports")) || [];
+
+
+let studentReports =
+reports.filter(function(report){
+
+return report.studentEmail===student.email;
+
+});
+
+
+let pending =
+studentReports.filter(function(report){
+
+return report.status==="Pending";
+
+}).length;
+
+
+let resolved =
+studentReports.filter(function(report){
+
+return report.status==="Resolved";
+
+}).length;
+
+
+document.getElementById("totalReports").innerHTML=
+studentReports.length;
+
+document.getElementById("pendingReports").innerHTML=
+pending;
+
+document.getElementById("resolvedReports").innerHTML=
+resolved;
+
+}
+
+
+/* LOGOUT */
+
+function logout(){
+
+localStorage.removeItem("loggedInStudent");
+
+showSection("home");
+
+}
+
+
+/* AUTOMATIC PRIORITY */
+
+function calculatePriority(
+urgency,
+students,
+deadline,
+resource
+){
+
+let urgencyValue={
+
+High:3,
+Medium:2,
+Low:1
+
+}[urgency];
+
+
+let score=
+(urgencyValue*4)+
+(students*0.5)+
+(deadline*3)+
+(resource*3);
+
+
+let level;
+let cssClass;
+
+
+if(score>=45){
+
+level="🔴 HIGH PRIORITY";
+cssClass="priority-high";
+
+}else if(score>=25){
+
+level="🟠 MEDIUM PRIORITY";
+cssClass="priority-medium";
+
+}else{
+
+level="🟢 LOW PRIORITY";
+cssClass="priority-low";
+
+}
+
+
+return{
+
+score:score,
+level:level,
+cssClass:cssClass
+
+};
+
+}
+
+
+/* SUBMIT PROBLEM */
+
+function submitProblem(){
+
+let student =
+JSON.parse(localStorage.getItem("loggedInStudent"));
+
+
+if(!student){
+
+alert("Please login first.");
+
+showSection("studentLogin");
+
+return;
+}
+
+
+let title =
+document.getElementById("problemTitle").value.trim();
+
+let location =
+document.getElementById("problemLocation").value;
+
+let category =
+document.getElementById("problemCategory").value;
+
+let students =
+Number(document.getElementById("affectedStudents").value)||0;
+
+let urgency =
+document.getElementById("urgency").value;
+
+let deadline =
+Number(document.getElementById("problemDeadline").value);
+
+let resource =
+Number(document.getElementById("problemResource").value);
+
+let description =
+document.getElementById("problemDescription").value.trim();
+
+
+if(title==="" || description===""){
+
+alert(
+"Please fill Problem Title and Description."
+);
+
+return;
+}
+
+
+/* CALCULATE SCORE */
+
+let priority =
+calculatePriority(
+urgency,
+students,
+deadline,
+resource
+);
+
+
+let reports =
+JSON.parse(localStorage.getItem("campusReports")) || [];
+
+
+let report={
+
+id:Date.now(),
+
+studentEmail:student.email,
+
+studentName:student.name,
+
+title:title,
+
+location:location,
+
+category:category,
+
+students:students,
+
+urgency:urgency,
+
+deadline:deadline,
+
+resource:resource,
+
+description:description,
+
+priorityScore:priority.score,
+
+priorityLevel:priority.level,
+
+priorityClass:priority.cssClass,
+
+status:"Pending",
+
+date:new Date().toLocaleString()
+
+};
+
+
+reports.push(report);
+
+
+localStorage.setItem(
+"campusReports",
+JSON.stringify(reports)
+);
+
+
+alert(
+"✅ Problem submitted!\n\n"+
+"Priority Score: "+priority.score.toFixed(1)+
+"\n"+priority.level
+);
+
+
+document.getElementById("problemTitle").value="";
+
+document.getElementById("affectedStudents").value="";
+
+document.getElementById("problemDescription").value="";
+
+
+showSection("myReports");
+
+}
+
+
+/* MY REPORTS */
+
+function displayMyReports(){
+
+let student =
+JSON.parse(localStorage.getItem("loggedInStudent"));
+
+
+if(!student){
+
+document.getElementById("myReportsList").innerHTML=
+"<div class='box'>Please login first.</div>";
+
+return;
+}
+
+
+let reports =
+JSON.parse(localStorage.getItem("campusReports")) || [];
+
+
+let studentReports =
+reports.filter(function(report){
+
+return report.studentEmail===student.email;
+
+});
+
+
+let container =
+document.getElementById("myReportsList");
+
+
+if(studentReports.length===0){
+
+container.innerHTML=
+"<div class='box'>No reports submitted yet.</div>";
+
+return;
+}
+
+
+container.innerHTML="";
+
+
+studentReports.slice().reverse().forEach(function(report){
+
+container.innerHTML+=`
+
+<div class="report ${report.priorityClass === 'priority-high' ? 'high' : report.priorityClass === 'priority-medium' ? 'medium' : 'low'}">
+
+<h3>${report.title}</h3>
+
+<div class="priority-badge ${report.priorityClass}">
+${report.priorityLevel}
+</div>
+
+<p>
+⚡ <b>Priority Score:</b>
+${Number(report.priorityScore).toFixed(1)}
+</p>
+
+<p>
+📍 <b>Location:</b>
+${report.location}
+</p>
+
+<p>
+📂 <b>Category:</b>
+${report.category}
+</p>
+
+<p>
+👥 <b>Students Affected:</b>
+${report.students}
+</p>
+
+<p>
+⚠️ <b>Urgency:</b>
+${report.urgency}
+</p>
+
+<p>
+📌 <b>Status:</b>
+${report.status}
+</p>
+
+<p>
+📝 <b>Description:</b>
+${report.description}
+</p>
+
+<p>
+🕒 <b>Submitted:</b>
+${report.date}
+</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* ADMIN LOGIN */
+
+function adminLogin(){
+
+let username =
+document.getElementById("adminUser").value;
+
+let password =
+document.getElementById("adminPass").value;
+
+let message =
+document.getElementById("adminMessage");
+
+
+if(username==="admin" && password==="1234"){
+
+message.innerHTML=
+"✅ Admin Login Successful!";
+
+message.style.color="#16a34a";
+
+
+setTimeout(function(){
+
+showSection("adminDashboard");
+
+},500);
+
+}else{
+
+message.innerHTML=
+"❌ Wrong username or password.";
+
+message.style.color="#dc2626";
+
+}
+
+}
+
+
+/* ADMIN REPORTS */
+
+function displayAdminReports(){
+
+let reports =
+JSON.parse(localStorage.getItem("campusReports")) || [];
+
+
+let container =
+document.getElementById("adminReports");
+
+
+if(reports.length===0){
+
+container.innerHTML=
+"<div class='box'>No campus problems found.</div>";
+
+return;
+}
+
+
+container.innerHTML="";
+
+
+reports.slice().reverse().forEach(function(report){
+
+let borderClass;
+
+if(report.priorityClass==="priority-high"){
+borderClass="high";
+}else if(report.priorityClass==="priority-medium"){
+borderClass="medium";
+}else{
+borderClass="low";
+}
+
+
+container.innerHTML+=`
+
+<div class="report ${borderClass}">
+
+<h3>${report.title}</h3>
+
+<div class="priority-badge ${report.priorityClass}">
+${report.priorityLevel}
+</div>
+
+<p>
+⚡ <b>Priority Score:</b>
+${Number(report.priorityScore).toFixed(1)}
+</p>
+
+<br>
+
+<p>
+👤 <b>Student:</b>
+${report.studentName}
+</p>
+
+<p>
+📧 <b>Email:</b>
+${report.studentEmail}
+</p>
+
+<p>
+📍 <b>Location:</b>
+${report.location}
+</p>
+
+<p>
+📂 <b>Category:</b>
+${report.category}
+</p>
+
+<p>
+👥 <b>Students Affected:</b>
+${report.students}
+</p>
+
+<p>
+⚠️ <b>Urgency:</b>
+${report.urgency}
+</p>
+
+<p>
+📝 <b>Description:</b>
+${report.description}
+</p>
+
+<p>
+📌 <b>Status:</b>
+${report.status}
+</p>
+
+<p>
+🕒 <b>Submitted:</b>
+${report.date}
+</p>
+
+${
+report.status!=="Resolved"
+
+?
+
+`<button
+class="main-btn"
+onclick="resolveReport(${report.id})">
+Mark as Resolved
+</button>`
+
+:
+
+"<b style='color:#16a34a'>✅ Resolved</b>"
+
+}
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* RESOLVE REPORT */
+
+function resolveReport(id){
+
+let reports =
+JSON.parse(localStorage.getItem("campusReports")) || [];
+
+
+reports=reports.map(function(report){
+
+if(report.id===id){
+
+report.status="Resolved";
+
+}
+
+return report;
+
+});
+
+
+localStorage.setItem(
+"campusReports",
+JSON.stringify(reports)
+);
+
+
+displayAdminReports();
+
+}
+
+
+/* PRIORITY DEMO */
+
+function calculatePriorityDemo(){
+
+let urgency =
+Number(
+document.getElementById("priorityUrgency").value
+);
+
+let students =
+Number(
+document.getElementById("priorityStudents").value
+)||0;
+
+let deadline =
+Number(
+document.getElementById("deadline").value
+);
+
+let resource =
+Number(
+document.getElementById("resourceImportance").value
+);
+
+
+let score=
+(urgency*4)+
+(students*0.5)+
+(deadline*3)+
+(resource*3);
+
+
+let level;
+
+
+if(score>=45){
+
+level="🔴 HIGH PRIORITY";
+
+}else if(score>=25){
+
+level="🟠 MEDIUM PRIORITY";
+
+}else{
+
+level="🟢 LOW PRIORITY";
+
+}
+
+
+document.getElementById("priorityResult").innerHTML=
+
+"<b>Priority Score: "+
+score.toFixed(1)+
+"</b><br><br>"+
+level;
+
+}
+
+
+/* WHAT IF */
+
+function runSimulator(){
+
+let total=
+Number(
+document.getElementById("totalComputers").value
+);
+
+let required=
+Number(
+document.getElementById("requiredComputers").value
+);
+
+let emergency=
+Number(
+document.getElementById("emergencyComputers").value
+);
+
+
+let remaining=
+total-required;
+
+let afterEmergency=
+remaining-emergency;
+
+let message;
+
+
+if(afterEmergency>=0){
+
+message=
+"✅ Resources are sufficient."+
+"<br><br>"+
+"Remaining after emergency requirement: "+
+afterEmergency;
+
+}else{
+
+message=
+"⚠️ Resource shortage detected."+
+"<br><br>"+
+"Additional computers required: "+
+Math.abs(afterEmergency);
+
+}
+
+
+document.getElementById("simulationResult").innerHTML=
+message;
+
+}
+
+
+/* NAVIGATION */
+
+function selectMapLocation(location){
+
+document.getElementById("mapLocation").value=
+location;
+
+findLocation();
+
+}
+
+
+function findLocation(){
+
+let location=
+document.getElementById("mapLocation").value;
+
+
+if(location===""){
+
+document.getElementById("directionResult").innerHTML=
+"Select a location.";
+
+return;
+
+}
+
+
+let directions={
+
+"Main Gate":
+"🚶 Starting point: Main Gate",
+
+"Admin Block":
+"➡️ From Main Gate, move straight towards the Admin Block.",
+
+"Library":
+"➡️ From Admin Block, follow the campus path towards the Library.",
+
+"Class":
+"➡️ Follow the academic block direction to reach your Class.",
+
+"Computer Lab":
+"➡️ Follow the academic block corridor towards the Computer Lab.",
+
+"Seminar Hall":
+"➡️ Move towards the central academic area to reach the Seminar Hall.",
+
+"Boys Washroom":
+"➡️ Follow the nearest academic block corridor to the Boys Washroom.",
+
+"Girls Washroom":
+"➡️ Follow the nearest academic block corridor to the Girls Washroom.",
+
+"Hostel":
+"➡️ Follow the campus road towards the Hostel area."
+
+};
+
+
+document.getElementById("directionResult").innerHTML=
+
+"<b>"+location+"</b>"+
+"<br><br>"+
+directions[location];
+
+}
+
+
+/* START */
+
+showSection("home");
+
+</script>
+
+</body>
+</html>
