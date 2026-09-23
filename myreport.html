@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Reports | CAMPUS-X</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <h1>CAMPUS-X</h1>
+        <h2>My Reports</h2>
+
+        <p>Here you can view your submitted campus problems.</p>
+
+        <br>
+
+        <div id="reports"></div>
+
+        <br>
+
+        <button onclick="goBack()">⬅ Back to Dashboard</button>
+
+    </div>
+
+    <script>
+
+        function showReports() {
+
+            let reports = JSON.parse(localStorage.getItem("reports")) || [];
+
+            let box = document.getElementById("reports");
+
+            if (reports.length === 0) {
+                box.innerHTML = "<p>No reports submitted yet.</p>";
+                return;
+            }
+
+            reports.forEach(function(report, index) {
+
+                box.innerHTML += `
+                    <div class="card">
+                        <h3>Report ${index + 1}</h3>
+                        <p><b>Problem:</b> ${report.problem}</p>
+                        <p><b>Location:</b> ${report.location}</p>
+                        <p><b>Urgency:</b> ${report.urgency}</p>
+                        <p><b>Status:</b> Pending</p>
+                    </div>
+                    <br>
+                `;
+
+            });
+        }
+
+        function goBack() {
+            window.location.href = "student.html";
+        }
+
+        showReports();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard | CAMPUS-X</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <h1>CAMPUS-X</h1>
+        <h2>Student Dashboard</h2>
+
+        <p>Welcome, Student! 👋</p>
+        <p>Select what you want to do:</p>
+
+        <div class="dashboard-buttons">
+
+            <button onclick="reportProblem()">
+                📝 Report a Problem
+            </button>
+
+            <button onclick="campusNavigation()">
+                📍 Campus Navigation
+            </button>
+
+            <button onclick="findClassroom()">
+                📚 Find Classroom
+            </button>
+
+            <button onclick="myReports()">
+                📊 My Reports
+            </button>
+
+        </div>
+
+        <p id="message"></p>
+
+    </div>
+
+    <script>
+
+        function reportProblem() {
+            document.getElementById("message").innerText =
+            "Report Problem feature selected.";
+        }
+
+        function campusNavigation() {
+            document.getElementById("message").innerText =
+            "Campus Navigation feature selected.";
+        }
+
+        function findClassroom() {
+            document.getElementById("message").innerText =
+            "Find Classroom feature selected.";
+        }
+
+        function myReports() {
+            document.getElementById("message").innerText =
+            "My Reports feature selected.";
+        }
+
+    </script>
+
+</body>
+</html>

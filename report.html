@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Problem | CAMPUS-X</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <h1>CAMPUS-X</h1>
+
+        <h2>Report a Campus Problem</h2>
+
+        <br>
+
+        <label>Problem:</label>
+        <br>
+        <input type="text" id="problem" placeholder="Enter problem">
+
+        <br><br>
+
+        <label>Location:</label>
+        <br>
+        <input type="text" id="location" placeholder="e.g. Lab 1">
+
+        <br><br>
+
+        <label>Urgency:</label>
+        <br>
+
+        <select id="urgency">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+        </select>
+
+        <br><br>
+
+        <button type="button" onclick="submitProblem()">
+            Submit Problem
+        </button>
+
+        <button type="button" onclick="goBack()">
+            ⬅ Back
+        </button>
+
+    </div>
+
+    <script>
+
+        function submitProblem() {
+
+            let problem = document.getElementById("problem").value;
+            let location = document.getElementById("location").value;
+            let urgency = document.getElementById("urgency").value;
+
+            if (problem === "" || location === "") {
+                alert("Please fill all details.");
+                return;
+            }
+
+            let reports = JSON.parse(localStorage.getItem("reports")) || [];
+
+            reports.push({
+                problem: problem,
+                location: location,
+                urgency: urgency
+            });
+
+            localStorage.setItem("reports", JSON.stringify(reports));
+
+            alert("Problem submitted successfully!");
+
+            document.getElementById("problem").value = "";
+            document.getElementById("location").value = "";
+        }
+
+        function goBack() {
+            window.location.href = "student.html";
+        }
+
+    </script>
+
+</body>
+</html>

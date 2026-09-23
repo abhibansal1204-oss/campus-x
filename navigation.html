@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Navigation | CAMPUS-X</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .map {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background: #e2e8f0;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .building {
+            display: inline-block;
+            background: white;
+            padding: 20px;
+            margin: 12px;
+            border-radius: 10px;
+            min-width: 150px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .building h3 {
+            margin-bottom: 8px;
+        }
+
+        .road {
+            margin: 10px;
+            font-size: 25px;
+        }
+
+        .search-box {
+            margin: 20px auto;
+        }
+
+        select {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin: 8px;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <h1>📍 CAMPUS-X</h1>
+
+        <h2>Campus Navigation</h2>
+
+        <p>Find your class, labs and important campus locations.</p>
+
+        <div class="search-box">
+
+            <label><b>Select Location:</b></label>
+
+            <br><br>
+
+            <select id="location">
+                <option value="">-- Select Location --</option>
+                <option>Class</option>
+                <option>Computer Lab</option>
+                <option>Library</option>
+                <option>Seminar Hall</option>
+                <option>Admin Block</option>
+                <option>Hostel</option>
+            </select>
+
+            <br>
+
+            <button onclick="findLocation()">
+                🔍 Find Location
+            </button>
+
+        </div>
+
+        <p id="result"></p>
+
+        <div class="map">
+
+            <div class="building">
+                <h3>🚪 Main Gate</h3>
+                <p>Campus Entry</p>
+            </div>
+
+            <div class="road">⬇️</div>
+
+            <div class="building">
+                <h3>🏢 Admin Block</h3>
+                <p>Administration</p>
+            </div>
+
+            <div class="building">
+                <h3>📚 Library</h3>
+                <p>Books & Study</p>
+            </div>
+
+            <div class="road">⬇️</div>
+
+            <div class="building">
+                <h3>🏫 Class</h3>
+                <p>Academic Area</p>
+            </div>
+
+            <div class="building">
+                <h3>💻 Computer Lab</h3>
+                <p>CSE Lab</p>
+            </div>
+
+            <div class="building">
+                <h3>🎤 Seminar Hall</h3>
+                <p>Events</p>
+            </div>
+
+            <div class="building">
+                <h3>🏠 Hostel</h3>
+                <p>Student Hostel</p>
+            </div>
+
+        </div>
+
+        <button onclick="goBack()">
+            ⬅ Back to Dashboard
+        </button>
+
+    </div>
+
+    <script>
+
+        function findLocation() {
+
+            let location =
+                document.getElementById("location").value;
+
+            if (location === "") {
+
+                document.getElementById("result").innerText =
+                    "Please select a location.";
+
+                return;
+            }
+
+            document.getElementById("result").innerText =
+                "📍 " + location + " selected!";
+
+        }
+
+        function goBack() {
+
+            window.location.href = "student.html";
+
+        }
+
+    </script>
+
+</body>
+</html>
